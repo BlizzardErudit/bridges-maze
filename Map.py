@@ -12,22 +12,22 @@ class Pixel:
         available = []
         if self.nord == State.State.Water:
             available.append("nord")
-        elif self.south == State.State.Water:
+        if self.south == State.State.Water:
             available.append("south")
-        elif self.east == State.State.Water:
+        if self.east == State.State.Water:
             available.append("east")
-        elif self.west == State.State.Water:
+        if self.west == State.State.Water:
             available.append("west")
         return available
     def available_bridge_direction(self):
         available = []
         if self.nord == State.State.Bridge:
             available.append("nord")
-        elif self.south == State.State.Bridge:
+        if self.south == State.State.Bridge:
             available.append("south")
-        elif self.east == State.State.Bridge:
+        if self.east == State.State.Bridge:
             available.append("east")
-        elif self.west == State.State.Bridge:
+        if self.west == State.State.Bridge:
             available.append("west")
         return available
     def turn_direction_brigde(self, name: str):
