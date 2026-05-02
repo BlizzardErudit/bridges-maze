@@ -2,16 +2,16 @@ import State
 import random
 
 class Pixel:
-    def __init__(self, property: State.State=State.State.Water, nord: State.State=State.State.Water, south: State.State=State.State.Water, east: State.State=State.State.Water, west: State.State=State.State.Water):
+    def __init__(self, property: State.State=State.State.Water, north: State.State=State.State.Water, south: State.State=State.State.Water, east: State.State=State.State.Water, west: State.State=State.State.Water):
         self.property = property
-        self.nord = nord
+        self.north = north
         self.south= south
         self.east = east
         self.west = west
     def available_water_direction(self):
         available = []
-        if self.nord == State.State.Water:
-            available.append("nord")
+        if self.north == State.State.Water:
+            available.append("north")
         if self.south == State.State.Water:
             available.append("south")
         if self.east == State.State.Water:
@@ -21,8 +21,8 @@ class Pixel:
         return available
     def available_bridge_direction(self):
         available = []
-        if self.nord == State.State.Bridge:
-            available.append("nord")
+        if self.north == State.State.Bridge:
+            available.append("north")
         if self.south == State.State.Bridge:
             available.append("south")
         if self.east == State.State.Bridge:
@@ -32,8 +32,8 @@ class Pixel:
         return available
     def turn_direction_brigde(self, name: str):
         match name:
-            case "nord":
-                self.nord = State.State.Bridge
+            case "north":
+                self.north = State.State.Bridge
             case "south":
                 self.south = State.State.Bridge
             case "east":
@@ -63,15 +63,15 @@ def empty_map(height: int, width: int) -> list[list[Pixel]]:
     the_map.reverse()
 
 
-    nord_line = []
+    north_line = []
     for i in range(width):
         if i == 0:
-            nord_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.NordBorder, State.State.Bridge,State.State.Water))
+            north_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.northBorder, State.State.Bridge,State.State.Water))
         elif i == 49:
-            nord_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.NordBorder, State.State.Water,State.State.Bridge))
+            north_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.northBorder, State.State.Water,State.State.Bridge))
         else :
-            nord_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.SouthBorder, State.State.Bridge,State.State.Bridge))
-    the_map.append(nord_line)
+            north_line.append(Pixel(State.State.Bridge, State.State.Water, State.State.SouthBorder, State.State.Bridge,State.State.Bridge))
+    the_map.append(north_line)
     return the_map
 
 def init_map(height: int, width: int):
