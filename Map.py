@@ -8,7 +8,7 @@ class Pixel:
         self.south= south
         self.east = east
         self.west = west
-    def available_water_direction():
+    def available_water_direction(self):
         available = []
         if self.nord == State.State.Water:
             available.append("nord")
@@ -19,7 +19,7 @@ class Pixel:
         elif self.west == State.State.Water:
             available.append("west")
         return available
-    def available_bridge_direction():
+    def available_bridge_direction(self):
         available = []
         if self.nord == State.State.Bridge:
             available.append("nord")
@@ -30,7 +30,7 @@ class Pixel:
         elif self.west == State.State.Bridge:
             available.append("west")
         return available
-    def turn_direction_brigde(name: str):
+    def turn_direction_brigde(self, name: str):
         match name:
             case "nord":
                 self.nord = State.State.Bridge
