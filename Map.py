@@ -14,9 +14,9 @@ class Pixel:
     def available_water_direction(self):
         available = []
         if self.north == State.State.Water:
-            available.append((self.y+1,self.x,"north"))
+            available.append((self.y-1,self.x,"north"))
         if self.south == State.State.Water:
-            available.append((self.y-1,self.x, "south"))
+            available.append((self.y+1,self.x, "south"))
         if self.east == State.State.Water:
             available.append((self.y,self.x+1, "east"))
         if self.west == State.State.Water:
@@ -25,9 +25,9 @@ class Pixel:
     def available_bridge_direction(self):
         available = []
         if self.north == State.State.Bridge:
-            available.append((self.y+1,self.x))
-        if self.south == State.State.Bridge:
             available.append((self.y-1,self.x))
+        if self.south == State.State.Bridge:
+            available.append((self.y+1,self.x))
         if self.east == State.State.Bridge:
             available.append((self.y,self.x+1))
         if self.west == State.State.Bridge:
