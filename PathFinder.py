@@ -1,4 +1,5 @@
-from Map import Pixel, empty_map
+#from Map import Pixel, empty_map
+from Map import *
 from State import State
 
 #Shortest path finder
@@ -41,6 +42,7 @@ class PathFinder:
             print(p)
             nonvisites.remove(p)
             direction = self.tabPixels[p[0]][p[1]].available_bridge_direction()
+            print("directions:", direction)
 
             if ((len(nonvisites) == 0) or (p == fin)):
                 if ((len(nonvisites) == 0) and (distance[fin] == 2147483647)):
@@ -50,9 +52,11 @@ class PathFinder:
             else:
                 for d in direction:
                     dist = distance[p] + 1
-                    if (dist < distance[p]):
+                    print(dist)
+                    if (dist < distance[d]):
                         distance[d] = dist
                         prec[d] = p
+                        print(d)
 
         q = fin
         #chemin.append(fin)
