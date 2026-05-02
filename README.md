@@ -4,7 +4,7 @@ Simulation to find the shortest path to cross a jungle of bridges.
 ## Usage
 Download the project and run Interface.py. A local web app should appear in your browser.
 ## Use of AI
-We used AI to fix difficult to understand code.
+We used AI to fix difficult to understand code in Map.py.
 ## Licenses
 MIT License
 
