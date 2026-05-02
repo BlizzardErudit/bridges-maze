@@ -76,7 +76,7 @@ def empty_map(height: int, width: int) -> list[list[Pixel]]:
 def init_map(height: int, width: int) -> list[list[Pixel]]:
     the_map = empty_map(height, width)
 
-    for _ in range(random.randint(10, 15)):
+    for _ in range(random.randint(int(0.3*width), int(0.6*width))):
         while True:
             first_pixel_x = random.randint(1, width - 2)
             first_pixel_y = random.randint(1, height - 1)
@@ -102,7 +102,7 @@ def init_map(height: int, width: int) -> list[list[Pixel]]:
 
 
 if __name__ == "__main__":
-    test_map = init_map(50, 50)
+    test_map = init_map(100, 100)
     for row in test_map:
         for pixel in row:
             if pixel.property == State.State.Bridge:
